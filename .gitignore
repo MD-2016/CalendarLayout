@@ -1,0 +1,6 @@
+node_modules/
+tests/
+.nvmrc
+.prettierrc.js
+*.DS_Store
+pico-master
