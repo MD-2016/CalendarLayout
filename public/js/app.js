@@ -1,6 +1,15 @@
 
 let currDate = new Date()
 
+// functions needed to check leap year and days in february
+isLeapYear = (year) => {
+    return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
+}
+
+getFebDays = (year) => {
+    return isLeapYear(year) ? 29 : 28
+}
+
 //===================================================
 // Creates the drop down of months for the month selection of the calendar
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
@@ -29,7 +38,7 @@ months.forEach((e, index) => {
 
     document.querySelector('#next-year').onclick = () => {
         ++currYear.value
-        calendarYearChanger.innerHTML = currYear
+        calendarYearChanger.innerHTML = currYear.value
     }   
 
 
@@ -38,6 +47,9 @@ months.forEach((e, index) => {
 //======================================================
 // Creates the grid and days for the month
 
+    // set the current default to be the current year and month
     
+    // generates the days based on month and year given
+   
 
 //======================================================
