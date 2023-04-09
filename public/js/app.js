@@ -1,16 +1,43 @@
-let calendar = document.querySelector('.calendar')
 
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+let currDate = new Date()
 
-isLeapYear = (year) => {
-    return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
-}
+//===================================================
+// Creates the drop down of months for the month selection of the calendar
+let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-getFebDays = (year) => {
-    return isLeapYear(year) ? 29 : 28
-}
+let monthPicker = document.querySelector('.months')
 
-generateCalendar  = (month, year) => {
-    let calDays = calendar.querySelector('.calendar-days')
+months.forEach((e, index) => {
+    let month = document.createElement('li')
+    month.innerHTML = `<li data-month="${index}"><a>${e}</a></li>`
+    monthPicker.appendChild(month)
+})
+//======================================================
+
+
+//======================================================
+// Creates the year changer
+
+
+    let currYear = {value: currDate.getFullYear()}
+    let calendarYearChanger = document.querySelector('#year')
+
+    document.querySelector('#prev-year').onclick = () => {
+        --currYear.value
+        calendarYearChanger.innerHTML = currYear.value
+    }
+
+    document.querySelector('#next-year').onclick = () => {
+        ++currYear.value
+        calendarYearChanger.innerHTML = currYear
+    }   
+
+
+//======================================================
+
+//======================================================
+// Creates the grid and days for the month
+
     
-}
+
+//======================================================
