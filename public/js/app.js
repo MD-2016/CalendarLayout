@@ -2,6 +2,10 @@ let today= new Date()
 let currMonth =  today.getMonth()
 let currYear = today.getFullYear()
 
+let calendarYearChanger = document.querySelector('#year')
+
+calendarYearChanger.innerHTML = currYear
+
 // functions needed to check leap year and days in february
 isLeapYear = (year) => {
     return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0)
@@ -44,9 +48,7 @@ months.forEach((e, index) => {
 //======================================================
 // Creates the year changer
 
-    let calendarYearChanger = document.querySelector('#year')
-
-    calendarYearChanger.value = currYear
+   
 
     document.querySelector('#prev-year').onclick = () => {
         --currYear
