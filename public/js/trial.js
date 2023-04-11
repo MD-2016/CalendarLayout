@@ -81,12 +81,12 @@ document.querySelector('#next-year').onclick = () => {
 
     generateDaysOfMonth(currMonth, currYear)
 }
-/*
-function jump() {
+
+function monthChoice() {
     currMonth = parseInt(monthChosen.value)
     //console.log(currMonth)
     currYear = parseInt(document.querySelector('#year').innerHTML)
     //console.log(currYear)
     generateDaysOfMonth(currMonth, currYear)
 }
-*/
+
