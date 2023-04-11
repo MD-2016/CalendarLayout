@@ -14,15 +14,15 @@
               <!-- Sidebar -->
               <div></div>
               <!-- Dropdown for months -->
-               <select name="months" id="months-list">
+               <select name="months" id="months-list" onchange="jump()">
                </select> 
               <!-- Selection for years  -->
               <div class="year-picker">
-                <span class="year-change" id="prev-year">
+                <span class="year-change" id="prev-year" onchange="previous()">
                     <pre><</pre>
                 </span>
                 <span class="year" id="year"></span>
-                <span class="year-change" id="next-year">
+                <span class="year-change" id="next-year" onchange="next()">
                     <pre>></pre>
                 </span>
               </div>
@@ -44,6 +44,6 @@
             </table>
         </main>
     </div>
-<script src="./js/app.js"></script>
+<script src="./js/trial.js"></script>
 </body>
 </html>
