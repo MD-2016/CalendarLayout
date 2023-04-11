@@ -1,6 +1,7 @@
 let today= new Date()
 let currMonth =  today.getMonth()
 let currYear = today.getFullYear()
+let selectedMonth = document.querySelector('month-choice')
 
 let calendarYearChanger = document.querySelector('#year')
 
@@ -25,6 +26,7 @@ months.map((month, i) => {
     let opt = document.createElement('option')
     opt.value = i;
     opt.innerHTML = month
+    opt.setAttribute('id', 'month-choice')
     monthPicker.append(opt) 
 })
 
@@ -69,7 +71,7 @@ months.forEach((e, index) => {
 // Creates the grid and days for the month
 
    generateDays = (month, year) => {
-        let firstDay = (new Date(year, month)).getDay()
+        let firstDay = new Date(today.getFullYear(), today.getMonth(), 1)
         let table = document.querySelector('#calendar-days')
         let date = 1
         table.innerHTML = ""
@@ -93,7 +95,7 @@ months.forEach((e, index) => {
                 cell.setAttribute('data-date', date)
                 cell.setAttribute('data-month', month + 1)
                 cell.setAttribute('data-year', year)
-                cell.setAttribute('dat-month-name', months[month])
+                cell.setAttribute('data-month-name', months[month])
                 cell.innerHTML = '<span>' + date + '</span>'
                 tr.appendChild(cell)
                 date++
@@ -107,6 +109,23 @@ months.forEach((e, index) => {
 //======================================================
 
 generateDays(currMonth, currYear)
+
+
+//======================================================
+// Match up different months with associated years correctly
+
+   function next() {
+        currYear = (currYear === 11) ? currYear + 1: currYear
+        currMonth = (currMonth + 1) % 12
+        generateDays(currMonth, currYear)
+   }
+
+   function previous() {
+    currYear = (currYear === 0) ? currYear - 1 : currYear
+    currMonth = (currMonth === 0) ? 11 : currMonth - 1
+    generateDays(currMonth, currYear)
+}
+//======================================================
 
 function daysInMonth(month, year) {
     return 32 - new Date(year, month, 32).getDate()
