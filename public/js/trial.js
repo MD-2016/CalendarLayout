@@ -86,7 +86,6 @@ function monthChoice() {
     currMonth = parseInt(monthChosen.value)
     currYear = parseInt(document.querySelector('#year').innerHTML)
     generateDaysOfMonth(currMonth, currYear)
-
 }
 
 
