@@ -26,7 +26,7 @@ months.map((month, i) => {
 
 generateDaysOfMonth = (month,year) => {
     let firstDay = new Date(year, month, 1)
-    let lastDay = new Date(today.getFullYear(), today.getMonth() + 1, 0)
+    let lastDay = new Date(year, month + 1, 0)
     let days = 1
     let tableData = null
     let table = document.querySelector('#calendar-days')
@@ -84,9 +84,9 @@ document.querySelector('#next-year').onclick = () => {
 
 function monthChoice() {
     currMonth = parseInt(monthChosen.value)
-    //console.log(currMonth)
     currYear = parseInt(document.querySelector('#year').innerHTML)
-    //console.log(currYear)
     generateDaysOfMonth(currMonth, currYear)
+
 }
+
 
