@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Calendar Page</title>
-    <link rel="stylesheet" href="./css/pico.min.css">
-    <link rel="stylesheet" href="./css/custom.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/pico.min.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+  </head>
+  <body>
     <div>
-        <header>
-              <!-- Sidebar -->
-              <div></div>
-              <!-- Dropdown for months -->
-               <select name="months" id="months-list" onchange="monthChoice()">
-               </select> 
-              <!-- Selection for years  -->
-              <div class="year-picker">
-                <span class="year-change" id="prev-year" onchange="previous()">
-                    <pre><</pre>
-                </span>
-                <span class="year" id="year"></span>
-                <span class="year-change" id="next-year" onchange="next()">
-                    <pre>></pre>
-                </span>
-              </div>
-        </header>
-        <main>
-            <table id="calendar">
-                <thead>
-                    <tr>
-                        <th>Sun</th>
-                        <th>Mon</th>
-                        <th>Tue</th>
-                        <th>Wed</th>
-                        <th>Thu</th>
-                        <th>Fri</th>
-                        <th>Sat</th>
-                    </tr>
-                </thead>
-                <tbody id="calendar-days"></tbody>
-            </table>
-        </main>
+      <header>
+        <!-- Sidebar -->
+        <div>
+            <a href="javascript:void(0)" class="closebtn" onclick="closeSideBar()">&times;</a>
+                <a href="#">About</a>
+                <a href="#">Test</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+        </div>
+
+        <span style="font-size:30px; cursor: pointer;" onclick="openSideBar()">&#9776;</span>
+        <!-- Dropdown for months -->
+        <select
+          name="months"
+          id="months-list"
+          onchange="monthChoice()"
+        ></select>
+        <!-- Selection for years  -->
+        <div class="year-picker">
+          <span class="year-change" id="prev-year" onchange="previous()">
+            <pre><</pre>
+          </span>
+          <span class="year" id="year"></span>
+          <span class="year-change" id="next-year" onchange="next()">
+            <pre>></pre>
+          </span>
+        </div>
+      </header>
+      <main>
+        <table id="calendar">
+          <thead>
+            <tr>
+              <th>Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Thu</th>
+              <th>Fri</th>
+              <th>Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendar-days"></tbody>
+        </table>
+      </main>
     </div>
-<script src="./js/trial.js"></script>
-</body>
+    <script src="./js/trial.js"></script>
+  </body>
 </html>
