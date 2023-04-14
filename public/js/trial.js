@@ -89,3 +89,14 @@ function monthChoice() {
 }
 
 
+// Side Bar show code
+function openSideBar() {
+    document.getElementById('sidenav').style.width = "250px"
+}
+
+function closeSideBar() {
+    document.getElementById('sidenav').style.width = "0"
+}
+
+
+
