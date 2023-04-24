@@ -91,8 +91,8 @@ function monthChoice() {
 
 // Side Bar show code
 function openSideBar() {
-    document.getElementById('sidenav').style.width = "250px"
-    document.getElementById('main').style.marginLeft = "250px"
+    document.getElementById('sidenav').style.width = "500px"
+    document.getElementById('main').style.marginLeft = "500px"
 }
 
 function closeSideBar() {
