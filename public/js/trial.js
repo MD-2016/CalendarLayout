@@ -9,6 +9,8 @@ let selectedYear = document.querySelector('.year')
 
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
+let smallerMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
 let monthChosen = document.getElementById('months-list')
 
 months.map((month, i) => {
@@ -89,7 +91,9 @@ function monthChoice() {
 }
 
 
-// Side Bar show code
+/*
+    Code for the sidebar functionality 
+*/
 function openSideBar() {
     document.getElementById('sidenav').style.width = "500px"
     document.getElementById('main').style.marginLeft = "500px"
@@ -99,6 +103,4 @@ function closeSideBar() {
     document.getElementById('sidenav').style.width = "0"
     document.getElementById('main').style.marginLeft = "0"
 }
-
-
 
