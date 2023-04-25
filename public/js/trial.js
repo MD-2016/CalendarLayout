@@ -100,7 +100,7 @@ let smallerMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Se
 let smallCurrYear = today.getFullYear()
 let smallCurrMonth = today.getMonth()
 
-document.querySelector('#month').innerHTML = today.getMonth()
+document.querySelector('#month').innerHTML = smallerMonths[smallCurrMonth]
 
 document.querySelector("#smallYear").innerHTML = smallCurrYear
 
@@ -135,6 +135,7 @@ generateSmallDaysOfMonth = (month,year) => {
     let tableData = null
     let table = document.querySelector('#sidebarCalendar')
     table.innerHTML = ""
+
 
 
 
