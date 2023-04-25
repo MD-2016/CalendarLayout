@@ -1,6 +1,8 @@
 let today = new Date()
 let currMonth = today.getMonth()
 let currYear = today.getFullYear()
+let smallCurrYear = today.getFullYear()
+let smallCurrMonth = today.getMonth()
 let selectedYear = document.querySelector('.year')
 
 //console.log(currMonth)
@@ -104,3 +106,16 @@ function closeSideBar() {
     document.getElementById('main').style.marginLeft = "0"
 }
 
+document.querySelector("#smallYear").innerHTML = smallCurrYear
+
+document.querySelector('#smallPrev-Year').onclick = () => {
+    --smallCurrYear
+    document.querySelector('#smallYear').innerHTML = smallCurrYear
+    //generateDaysOfMonth(smallCurrMonth, smallCurrYear)
+}
+
+document.querySelector('#smallNext-Year').onclick = () => {
+    ++smallCurrYear
+    document.querySelector('#smallYear').innerHTML = smallCurrYear
+    //generateDaysOfMonth(smallCurrMonth, smallCurrYear)
+}
