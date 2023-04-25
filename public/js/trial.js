@@ -96,6 +96,11 @@ function monthChoice() {
 /*
     Code for the sidebar functionality 
 */
+
+let smallMonth = document.querySelector('#month').innerHTML = today.getMonth()
+
+document.querySelector("#smallYear").innerHTML = smallCurrYear
+
 function openSideBar() {
     document.getElementById('sidenav').style.width = "500px"
     document.getElementById('main').style.marginLeft = "500px"
@@ -106,16 +111,57 @@ function closeSideBar() {
     document.getElementById('main').style.marginLeft = "0"
 }
 
-document.querySelector("#smallYear").innerHTML = smallCurrYear
+
 
 document.querySelector('#smallPrev-Year').onclick = () => {
     --smallCurrYear
     document.querySelector('#smallYear').innerHTML = smallCurrYear
-    //generateDaysOfMonth(smallCurrMonth, smallCurrYear)
+    generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 }
 
 document.querySelector('#smallNext-Year').onclick = () => {
     ++smallCurrYear
     document.querySelector('#smallYear').innerHTML = smallCurrYear
-    //generateDaysOfMonth(smallCurrMonth, smallCurrYear)
+    generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
+}
+
+generateSmallDaysOfMonth = (month,year) => {
+    let firstDay = new Date(year, month, 1)
+    let lastDay = new Date(year, month + 1, 0)
+    let days = 1
+    let tableData = null
+    let table = document.querySelector('#sidebarCalendar')
+    table.innerHTML = ""
+
+    
+    selectedYear.innerHTML = year
+
+
+
+
+
+    for(let i = 0; i < 6; i++) {
+        let tr = document.createElement('tr')
+
+        for(let j = 0; j < 7; j++) {
+            if(i === 0 && j < firstDay.getDay()) {
+                tableData = document.createElement('td')
+                let emptyText = document.createTextNode("")
+                tableData.appendChild(emptyText)
+                tr.appendChild(tableData)
+            } else if( days > lastDay.getDate()) {
+                break;
+            } else {
+                tableData = document.createElement('td')
+                tableData.setAttribute('data-day', days)
+                tableData.setAttribute('data-month', month+1)
+                tableData.setAttribute('data-year', year)
+                tableData.innerHTML = days
+                tr.appendChild(tableData)
+                days++
+            }
+        }
+
+        table.appendChild(tr)
+    }
 }
