@@ -1,8 +1,6 @@
 let today = new Date()
 let currMonth = today.getMonth()
 let currYear = today.getFullYear()
-let smallCurrYear = today.getFullYear()
-let smallCurrMonth = today.getMonth()
 let selectedYear = document.querySelector('.year')
 
 //console.log(currMonth)
@@ -11,7 +9,7 @@ let selectedYear = document.querySelector('.year')
 
 let months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 
-let smallerMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
 
 let monthChosen = document.getElementById('months-list')
 
@@ -97,7 +95,12 @@ function monthChoice() {
     Code for the sidebar functionality 
 */
 
-let smallMonth = document.querySelector('#month').innerHTML = today.getMonth()
+let smallerMonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+let smallCurrYear = today.getFullYear()
+let smallCurrMonth = today.getMonth()
+
+document.querySelector('#month').innerHTML = today.getMonth()
 
 document.querySelector("#smallYear").innerHTML = smallCurrYear
 
@@ -132,9 +135,6 @@ generateSmallDaysOfMonth = (month,year) => {
     let tableData = null
     let table = document.querySelector('#sidebarCalendar')
     table.innerHTML = ""
-
-    
-    selectedYear.innerHTML = year
 
 
 
