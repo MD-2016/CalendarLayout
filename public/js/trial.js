@@ -132,7 +132,15 @@ document.querySelector('#smallPrev-Month').onclick = () => {
 }
 
 document.querySelector('#smallNext-Month').onclick = () => {
-    ++smallCurrMonth
+    
+    if(smallCurrMonth >= 11) {
+        ++smallCurrYear
+        smallCurrMonth = 0
+    }
+    else {
+        ++smallCurrMonth
+    }
+    document.querySelector('#smallYear').innerHTML = smallCurrYear
     document.querySelector('#month').innerHTML = smallerMonths[smallCurrMonth]
     generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 }
