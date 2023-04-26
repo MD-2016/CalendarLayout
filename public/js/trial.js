@@ -117,7 +117,16 @@ function closeSideBar() {
 
 
 document.querySelector('#smallPrev-Month').onclick = () => {
-    --smallCurrMonth
+
+    if(smallCurrMonth <= 0) {
+        --smallCurrYear
+        smallCurrMonth = 11
+    }
+    else {
+        --smallCurrMonth
+    }
+
+    document.querySelector('#smallYear').innerHTML = smallCurrYear
     document.querySelector('#month').innerHTML = smallerMonths[smallCurrMonth]
     generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 }
