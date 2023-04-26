@@ -116,15 +116,15 @@ function closeSideBar() {
 
 
 
-document.querySelector('#smallPrev-Year').onclick = () => {
-    --smallCurrYear
-    document.querySelector('#smallYear').innerHTML = smallCurrYear
+document.querySelector('#smallPrev-Month').onclick = () => {
+    --smallCurrMonth
+    document.querySelector('#month').innerHTML = smallerMonths[smallCurrMonth]
     generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 }
 
-document.querySelector('#smallNext-Year').onclick = () => {
-    ++smallCurrYear
-    document.querySelector('#smallYear').innerHTML = smallCurrYear
+document.querySelector('#smallNext-Month').onclick = () => {
+    ++smallCurrMonth
+    document.querySelector('#month').innerHTML = smallerMonths[smallCurrMonth]
     generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 }
 
