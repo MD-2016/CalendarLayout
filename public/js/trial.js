@@ -5,7 +5,7 @@ let selectedYear = document.querySelector(".year");
 
 //console.log(currMonth)
 //console.log(currYear)
-
+/*
 let months = [
   "January",
   "February",
@@ -19,10 +19,11 @@ let months = [
   "October",
   "November",
   "December",
-];
+];*/
 
 let monthChosen = document.getElementById("months-list");
 
+/*
 months.map((month, i) => {
   let opt = document.createElement("option");
   opt.value = i;
@@ -34,6 +35,7 @@ months.map((month, i) => {
   opt.setAttribute("value", `${i}`);
   monthChosen.appendChild(opt);
 });
+*/
 
 generateDaysOfMonth = (month, year) => {
   let firstDay = new Date(year, month, 1);
