@@ -163,7 +163,7 @@ generateSmallDaysOfMonth = (month, year) => {
   let lastDay = new Date(year, month + 1, 0);
   let days = 1;
   let tableData = null;
-  let table = document.querySelector("#sidebarCalendar");
+  let table = document.querySelector("#sideCalendar-Days");
   table.innerHTML = "";
 
   for (let i = 0; i < 6; i++) {
