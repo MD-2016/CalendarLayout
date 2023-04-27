@@ -153,11 +153,6 @@ generateSmallDaysOfMonth = (month,year) => {
     let table = document.querySelector('#sidebarCalendar')
     table.innerHTML = ""
 
-
-
-
-
-
     for(let i = 0; i < 6; i++) {
         let tr = document.createElement('tr')
 
