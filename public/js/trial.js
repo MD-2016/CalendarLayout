@@ -195,3 +195,17 @@ generateSmallDaysOfMonth = (month, year) => {
 };
 
 generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
+
+/*
+  Creates the Modal overlay
+*/
+function createModalOverlay() {
+  // 1. create the dialog element
+  // 2. add a class to style
+  // 3. append to the td element
+  // 4. add onclick even to td 
+  // 5. trigger the modal
+  // 6. add the event to that day of that month of that year
+} 
+
+
