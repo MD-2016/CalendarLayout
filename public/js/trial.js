@@ -201,11 +201,15 @@ generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 */
 function createModalOverlay() {
   // 1. create the dialog element
+  let modal = createElement('dialog')
+  
   // 2. add a class to style
+  modal.setAttribute('class=eventModal')
+  modal.setAttribute('id=setEvents')
+
   // 3. append to the td element
+  
   // 4. add onclick even to td 
   // 5. trigger the modal
   // 6. add the event to that day of that month of that year
 } 
-
-
