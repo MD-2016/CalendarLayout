@@ -184,6 +184,7 @@ generateSmallDaysOfMonth = (month, year) => {
         tableData.setAttribute("data-day", days);
         tableData.setAttribute("data-month", month + 1);
         tableData.setAttribute("data-year", year);
+        //tableData.appendChild()
         tableData.innerHTML = days;
         tr.appendChild(tableData);
         days++;
@@ -199,16 +200,13 @@ generateSmallDaysOfMonth(smallCurrMonth, smallCurrYear)
 /*
   Creates the Modal overlay
 */
-function createModalOverlay() {
+function createModalOverlay(tableData, month, day) {
   // 1. create the dialog element
-  let modal = createElement('dialog')
-  
   // 2. add a class to style
   modal.setAttribute('class=eventModal')
   modal.setAttribute('id=setEvents')
 
   // 3. append to the td element
-  
   // 4. add onclick even to td 
   // 5. trigger the modal
   // 6. add the event to that day of that month of that year
